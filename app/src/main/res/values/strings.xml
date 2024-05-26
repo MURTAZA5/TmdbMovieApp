@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tmdb Movie App</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_favourite">Favourtie</string>
+    <string name="nav_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home_navigation">HomeNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="watch">Watch</string>
+    <string name="don_t_look_up">Don\'t look up</string>
+    <string name="title">Movie Title</string>
+    <string name="overview">Overview</string>
+    <string name="date">date</string>
+    <string name="watch_traller">Watch Trailer</string>
+    <string name="action">Action</string>
+    <string name="genres">Genres</string>
+    <string name="enter_valid_name">Enter movie name.</string>
+    <string name="get_ticket">Get Ticket</string>
+    <string name="the_creator">The creator</string>
+    <string name="select_seats">Select Seats</string>
+    <string name="no_video_data_found">No video data found.</string>
+    <string name="movie_detail">Movie Detailed</string>
+    <string name="done">Done</string>
+    <string name="movie_details_not_found">Movie details not found.</string>
+    <string name="no_internet">No internet!</string>
+    <string name="something_went_wroung">Something went Wrong</string>
+</resources>

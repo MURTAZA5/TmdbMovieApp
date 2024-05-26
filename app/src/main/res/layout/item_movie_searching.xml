@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_marginHorizontal="@dimen/_8sdp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView5"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewMoviePosture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/placeholder"
+            android:scaleType="fitXY" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvMovieName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="@string/title"
+        android:textColor="@color/text_dark_color"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/materialCardView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/materialCardView5"
+        app:layout_constraintTop_toTopOf="@+id/materialCardView5"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/tvMovieDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="@string/movie_detail"
+        android:textColor="@color/text_dark_color"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/materialCardView5"
+        app:layout_constraintStart_toEndOf="@+id/materialCardView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMovieName"
+        app:layout_constraintVertical_bias="0.16" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

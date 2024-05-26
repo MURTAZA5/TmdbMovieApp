@@ -1,0 +1,146 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
+
+/*
+    id 'kotlin-android-extensions'
+*/
+}
+def apikeyPropertiesFile = rootProject.file("gradle.properties")
+def apikeyProperties = new Properties()
+if (apikeyPropertiesFile.exists()) {
+    apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+}
+android {
+    namespace 'com.tmdbapi.cowlar.task'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.tmdbapi.cowlar.task"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildFeatures {
+            buildConfig true
+        }
+        buildConfigField("String", "SECRET_KEY", apikeyProperties['SECRET_KEY'])
+
+    }
+
+    buildTypes {
+        debug{
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+dependencies {
+
+
+    def room_version = '2.4.3'
+    def lifecycle_version = "2.5.1"
+    def retrofit_version = "2.9.0"
+    def logging_interceptor_version = "4.12.0"
+    def moshi_version = "1.12.0"
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    testImplementation "io.mockk:mockk:1.13.10"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation("androidx.collection:collection-ktx:1.4.0")
+
+    // Room components
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //Hilt androidx.activity:activity-ktx
+    implementation 'com.google.dagger:hilt-android:2.45'
+    kapt 'com.google.dagger:hilt-android-compiler:2.45'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation 'androidx.activity:activity-ktx:1.8.0-alpha03'
+
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+
+    // Saved state module for ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+
+    // Retrofit + Moshi + okhttp
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+
+    //Kotlin Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    kapt 'com.github.bumptech.glide:ksp:4.16.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.9.1'
+
+
+    //youtube player lib
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
+
+    //Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+
+    //to handle screen pixels
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+    // to handle text size on screen pixels
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    //single row calander
+    implementation 'com.michalsvec:single-row-calednar:1.0.0'
+
+
+
+}
+
