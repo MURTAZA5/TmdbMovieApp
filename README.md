@@ -1,13 +1,13 @@
-TMDBMovies App.
-Applied technologies and libraries:
-Android X
-MVVM Design Pattern
-Hilt (Dagger)
-Retrofit
-Okhttp
-Glide
-Flow
-Kotlin Coroutines
-Room Database
-Material Design
-Youtube Player Api
+# TMDBMovies App.
+Applied technologies and libraries:<br>
+Android X<br>
+MVVM Design Pattern<br>
+Hilt (Dagger)<br>
+Retrofit<br>
+Okhttp<br>
+Glide<br>
+Flow<br>
+Kotlin Coroutines<br>
+Room Database<br>
+Material Design<br>
+Youtube Player Api<br>
